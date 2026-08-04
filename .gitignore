@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Production build
+dist/
+dist-ssr/
+
+# Logs & Environment
+*.log
+.env
+.env.local
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary test scripts & artifacts
+*.cjs
+screenshot*.png

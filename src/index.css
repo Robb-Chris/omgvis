@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #020206;
+  --surface: rgba(12, 12, 18, 0.88);
+  --surface-hover: rgba(22, 22, 32, 0.85);
+  --text: #f8fafc;
+  --text-2: #94a3b8;
+  --text-3: #64748b;
+  --border: rgba(255, 255, 255, 0.08);
+  --accent: #38bdf8;
+  --accent-glow: rgba(56, 189, 248, 0.25);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme='light'] {
+  --bg: #f8fafc;
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface-hover: rgba(241, 245, 249, 0.9);
+  --text: #0f172a;
+  --text-2: #475569;
+  --text-3: #94a3b8;
+  --border: rgba(0, 0, 0, 0.08);
+  --accent: #0284c7;
+  --accent-glow: rgba(2, 132, 199, 0.18);
+  --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  transition: background-color 0.4s ease;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Outfit', system-ui, sans-serif;
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+  background: var(--surface);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--glass-shadow);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Custom Scrollbars */
+.glass-panel::-webkit-scrollbar {
+  width: 5px;
+}
+.glass-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+.glass-panel::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+/* Buttons & Pills */
+.btn-pill {
+  background: var(--surface-hover);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-pill:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.btn-pill.active {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  font-weight: 600;
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+/* Page Load 2-Second Opacity Fade In */
+@keyframes pageFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-in-container {
+  animation: pageFadeIn 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Slider Controls */
+input[type='range'] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--surface-hover);
+  outline: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--accent-glow);
+  transition: transform 0.15s ease;
+}
+
+input[type='range']::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+}
