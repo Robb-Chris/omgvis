@@ -2,6 +2,8 @@
 
 OmgVis is an interactive WebGL visualization tool for exploring prime factor depth $\Omega(n)$, prime and composite duality, and the limit distribution of prime factors predicted by the Erdős–Kac Theorem.
 
+Published here: https://robb-chris.github.io/omgvis/
+
 ---
 
 ## Mathematical Background
